@@ -1,5 +1,3 @@
-# analiseWhats"
-
 # Objetivo como Desenvolvedor
 
 * Praticar o paradigma funcional
