@@ -1,3 +1,5 @@
+Extrai dados apartir de um backup/histórico de uma conversa de whatsapp previamente exportada
+
 # Objetivo como Desenvolvedor
 
 * Praticar o paradigma funcional
