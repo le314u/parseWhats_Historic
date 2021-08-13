@@ -31,8 +31,9 @@ function structValid(struct){
 module.exports = async function createStruct(pathFileDialog){
     try {
         let data = await input(pathFileDialog)
-        const linhas = data.split('\n')
+        const linhas = data.split('\n') 
         const structData = linhas.map(parse)
+        console.log(structData)
         const newArray = fixArray(structData)
         const returnArray = newArray.filter((obj)=> obj != undefined)
         if(returnArray.length == 0){

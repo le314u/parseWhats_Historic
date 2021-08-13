@@ -12,8 +12,10 @@ module.exports =  function createDate(line){
         const data = search(re_data, line)
         const re_hora = new RegExp("[0-9][0-9]:[0-9][0-9]");
         const hora = search(re_hora, data[1]);
-        const re_name = new RegExp("(\d|[a-z]|[A-Z])[^:]*");
-        const name = search(re_name, hora[1])
+        const re_aux = new RegExp(" - ");
+        const aux = search(re_aux, hora[1])
+        const re_name = new RegExp("[^:]*");
+        const name = search(re_name, aux[1])
         const re_text = new RegExp(": ");
         const text = search(re_text, hora[1])
         return {
