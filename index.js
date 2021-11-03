@@ -2,19 +2,28 @@ let struct = require('./struct/struct')
 let {analyzeData,analyzeUser,analyzeWord,analyzeAllDates,analyzeAllWords,analyzeAllUsers} = require('./analyze/roam')
 
 async function main(){
-    let structs = await struct('./Conversa2')
-    structs = analyzeData(structs,'01/01/20','01/12/21')
-    structs = analyzeUser(structs,'Lucas')
-    structs = analyzeWord(structs,'"pai"')
+    let structs = await struct('./w.txt')
+
+    process(structs,'01/01/21','01/12/21','Jeff','torresmo')
+    process(structs,'01/01/21','01/12/21','Paulo H','torresmo')
+    process(structs,'01/01/21','01/12/21','Leandro','torresmo')
+    process(structs,'01/01/21','01/12/21','João','torresmo')
+    process(structs,'01/01/21','01/12/21','@All','pomo')
+}
+
+function process(structs,dInit,dEnd,user,word){
+    structs = analyzeData(structs,dInit,dEnd)
+    structs = user != '@All' ? analyzeUser(structs,user) : structs
+    structs = analyzeWord(structs,word)
 
     datas = analyzeAllDates(structs)
     words = analyzeAllWords(structs)
     users = analyzeAllUsers(structs)
 
-    /*console.log("Durante:",datas[0],'até',datas[datas.length-1])
-    console.log('Conversa entre:',users.join(',\n '))
-
-    console.log(structs)  
-*/
+    console.log("Durante:",dInit,'até',dEnd,user,"falou",word,structs.length,"vezes")
 }
+
+
 main()
+
+

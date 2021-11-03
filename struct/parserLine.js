@@ -8,7 +8,7 @@ function search(re, string){
 
 module.exports =  function createDate(line){
     try {
-        const re_data = new RegExp("[0-9][0-9]/[0-9][0-9]/[0-9][0-9]")
+        const re_data = new RegExp("[0-9][0-9]/[0-9][0-9]/[0-9][0-9]([0-9][0-9])?")
         const data = search(re_data, line)
         const re_hora = new RegExp("[0-9][0-9]:[0-9][0-9]");
         const hora = search(re_hora, data[1]);

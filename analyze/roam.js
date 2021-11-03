@@ -12,6 +12,7 @@ function roam(array, match){
     return filterArray(newArray)
 }
 
+//Faz uma pre filtragem no array tirando casos que o objeto não foi criado corretamente
 function filterArray(array){
     return array.filter((obj)=> obj != false)
 }

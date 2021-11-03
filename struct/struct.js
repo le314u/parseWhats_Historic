@@ -17,7 +17,6 @@ function mergeObj(struct, indice, array){
 }
 
 function fixArray(array){
-    //
     return array.map((struct, indice, array)=>{
         if( structValid(array[indice]))
             return mergeObj(struct, indice, array)
@@ -33,7 +32,6 @@ module.exports = async function createStruct(pathFileDialog){
         let data = await input(pathFileDialog)
         const linhas = data.split('\n') 
         const structData = linhas.map(parse)
-        console.log(structData)
         const newArray = fixArray(structData)
         const returnArray = newArray.filter((obj)=> obj != undefined)
         if(returnArray.length == 0){
